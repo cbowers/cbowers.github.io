@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+  <link href="style.css" rel="stylesheet" />
+  <meta charset=utf-8 />
+  <title>MRT visualization</title>
+  <script src="jquery.js"></script>
+  <script src="cytoscape.js"></script>
+  <script src="cola.v3.min.js"></script>
+  <script src="code2.js"></script>
+</head>
+  
+<body>
+  <div id="cy"></div>
+  <div id="commands">
+  	<button id="load-graph-button">reload graph</button>
+  	<button id="cose-layout-button">cose layout</button>
+  	<button id="cola-layout-button">cola layout</button>
+  	<button id="unhide-edges-button">unhide all edges</button>
+  	<br>
+  	<input type="checkbox" id="blue-switch" class="switch" />
+  	<label for="blue-switch">show blue MRT</label>
+  	<br>
+  	<input type="checkbox" id="red-switch" class="switch" />
+  	<label for="red-switch">show red MRT</label>
+  	<br>
+  	<input type="checkbox" id="green-switch" class="switch" />
+  	<label for="green-switch">show green SPF</label>
+  	<br>
+  	<input type="checkbox" id="gadag-switch" class="switch" />
+  	<label for="gadag-switch">show GADAG</label>
+  	<br>
+  	<input type="checkbox" id="link-switch" class="switch" />
+  	<label for="link-switch">show links</label>
+  </div>
+</body>
+</html>
