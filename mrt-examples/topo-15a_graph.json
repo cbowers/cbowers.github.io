@@ -18,7 +18,7 @@
             {
                 "classes": "edge-link-labeled",
                 "data": {
-                    "label": "(0,10)",
+                    "label": "(10,0)",
                     "source": "001",
                     "target": "091"
                 }
@@ -64,7 +64,7 @@
             {
                 "classes": "edge-link-labeled",
                 "data": {
-                    "label": "(0,10)",
+                    "label": "(10,0)",
                     "source": "002",
                     "target": "091"
                 }
@@ -110,7 +110,7 @@
             {
                 "classes": "edge-link-labeled",
                 "data": {
-                    "label": "(0,10)",
+                    "label": "(10,0)",
                     "source": "003",
                     "target": "091"
                 }
@@ -118,7 +118,7 @@
             {
                 "classes": "edge-link-labeled",
                 "data": {
-                    "label": "(0,10)",
+                    "label": "(10,0)",
                     "source": "004",
                     "target": "091"
                 }
