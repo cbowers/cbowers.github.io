@@ -1,8 +1,7 @@
 $(function(){ // on dom ready
 	
-//var NETWORK_FILE_NAME = 'example_topo_gadag_mod.json';
 //var NETWORK_FILE_NAME = 'example_topo_gadag.json';
-var NETWORK_FILE_NAME = 'topo-15a_gadag.json';
+var NETWORK_FILE_NAME = 'topo-15a_graph.json';
 
 $('#cy').cytoscape({
   style: cytoscape.stylesheet()
@@ -130,6 +129,7 @@ $('#cy').cytoscape({
   
   layout: {
     name: 'cola',
+	nodeSpacing: 50,
   },
   
   // on graph initial layout done (could be async depending on layout...)
@@ -149,6 +149,7 @@ $('#cy').cytoscape({
 	
 		cy.layout({
 			name : 'cola',
+			nodeSpacing: 50,
 		});
 	};
 	
@@ -206,13 +207,13 @@ $('#cy').cytoscape({
 	$("#cose-layout-button").bind("click", function(){
 		cy.layout({
 			name : 'cose',
-			padding: 50,
 		});
 	});
 	
 	$("#cola-layout-button").bind("click", function(){
 		cy.layout({
 			name : 'cola',
+			nodeSpacing: 50,
 		});
 	});
 	
