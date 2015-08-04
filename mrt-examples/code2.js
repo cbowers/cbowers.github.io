@@ -127,38 +127,74 @@ $('#cy').cytoscape({
       })
       ,
   
-  layout: {
-    name: 'cola',
-	nodeSpacing: 50,
-  },
+//  layout: {
+//    name: 'cola',
+//	nodeSpacing: function( node ){ return 10; },
+//  },
   
   // on graph initial layout done (could be async depending on layout...)
   ready: function(){
+	
+	function node_spacing_func(node){
+		return node_spacing;
+	}
 	  
 	function reload_graph(){
-	    document.getElementById("blue-switch").checked = true;
-	    document.getElementById("red-switch").checked = true;
-	    document.getElementById("green-switch").checked = true;
-	    document.getElementById("gadag-switch").checked = true;
-	    document.getElementById("link-switch").checked = true;
-	    
-		$.getJSON(NETWORK_FILE_NAME).success(function(network) {
-			cy.load(network.elements);
-		})
-	    cy.elements().unselectify();
-	
-		cy.layout({
-			name : 'cola',
-			nodeSpacing: 50,
+		cy.batch(function(){
+		    document.getElementById("blue-switch").checked = true;
+		    document.getElementById("red-switch").checked = true;
+		    document.getElementById("green-switch").checked = true;
+		    document.getElementById("gadag-switch").checked = true;
+		    document.getElementById("link-switch").checked = true;
+		    
+			$.getJSON(graph_file).success(function(network) {
+				cy.load(network.elements);
+			})		
+					
+			cy.layout({
+				name : 'cola',
+//				nodeSpacing: node_spacing_func,
+			});
 		});
 	};
 	
+    window.cy = this;
+    
 	var current_dest;
 	var current_failed;
 	
-    window.cy = this;
-    
-    reload_graph();
+	var graph_files = {
+	           	    'a': {'graph_file':'example_topo_gadag.json', 'node_spacing': 10},
+	           	    'b':{'graph_file':'topo-15a_graph.json', 'node_spacing': 100},
+	}	
+	
+	for (graph in graph_files) {
+		$("#graph-select").append( '<option value="' + graph + '">' + graph_files[graph].graph_file);
+	}
+
+	var graph_file = graph_files['a'].graph_file;
+	var node_spacing = graph_files['a'].node_spacing;
+	
+	$("#graph-select").bind("change", function(){
+		console.log('from inside change event handler, val=' + $("#graph-select").val())
+		graph_file = graph_files[$("#graph-select").val()].graph_file;
+		node_spacing = graph_files[$("#graph-select").val()].node_spacing;
+		reload_graph();
+	});
+
+	console.log('testing console');
+	console.log('url(id) = ' + $.url('?id') );
+
+	// if ?id=a parameter in url is in the graph_files dictionary, then
+	// change the value of the graph selection and trigger a change event.
+	if ($.url('?id') in graph_files){
+		console.log('url(id) in graph_files');
+		$("#graph-select")
+			.val($.url('?id'))
+			.trigger('change');
+	} else {
+		reload_graph();
+	}
 
 	cy.on('tap', 'node', function(e){
 	  var node = e.cyTarget; 
@@ -213,7 +249,7 @@ $('#cy').cytoscape({
 	$("#cola-layout-button").bind("click", function(){
 		cy.layout({
 			name : 'cola',
-			nodeSpacing: 50,
+			nodeSpacing: node_spacing_func,
 		});
 	});
 	

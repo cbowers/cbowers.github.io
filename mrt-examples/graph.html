@@ -6,6 +6,7 @@
   <meta charset=utf-8 />
   <title>MRT visualization</title>
   <script src="jquery.js"></script>
+  <script src="url.min.js"></script>  
   <script src="cytoscape.js"></script>
   <script src="cola.v3.min.js"></script>
   <script src="code2.js"></script>
@@ -14,9 +15,14 @@
 <body>
   <div id="cy"></div>
   <div id="commands">
+  	<select id="graph-select"></select>
+  	<br>
   	<button id="load-graph-button">reload graph</button>
+  	<br>
   	<button id="cose-layout-button">cose layout</button>
+  	<br>
   	<button id="cola-layout-button">cola layout</button>
+  	<br>
   	<button id="unhide-edges-button">unhide all edges</button>
   	<br>
   	<input type="checkbox" id="blue-switch" class="switch" />
