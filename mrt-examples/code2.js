@@ -101,6 +101,24 @@ $('#cy').cytoscape({
     	'border-color': 'green',
     	'border-width': 2,
       })
+    .selector('.node-named-proxy')
+      .css({
+        'background-color': 'DarkViolet',
+    	'border-color': 'DarkViolet',
+    	'border-width': 2,
+    	'width': 45,
+      })
+    .selector('.edge-pnar1')
+      .css({
+        'line-color': 'DarkViolet',
+        'target-arrow-shape': 'none',
+      })
+    .selector('.edge-pnar2')
+      .css({
+        'line-color': 'DarkViolet',
+        'target-arrow-shape': 'none',
+        'line-style': 'dashed',
+      }) 
     .selector('.blue-hidden-edge')
       .css({
     	'display': 'none'
@@ -126,7 +144,8 @@ $('#cy').cytoscape({
     	'display': 'none'
       })
       ,
-  
+
+  wheelSensitivity: 0.25,
 //  layout: {
 //    name: 'cola',
 //	nodeSpacing: function( node ){ return 10; },
@@ -164,8 +183,11 @@ $('#cy').cytoscape({
 	var current_failed;
 	
 	var graph_files = {
-	           	    'a': {'graph_file':'example_topo_gadag.json', 'node_spacing': 10},
+	           	    'a': {'graph_file':'example_topo_graph.json', 'node_spacing': 10},
 	           	    'b':{'graph_file':'topo-15a_graph.json', 'node_spacing': 100},
+	           	 	'c':{'graph_file':'topo-15b_graph.json', 'node_spacing': 100},
+	           	 	'd':{'graph_file':'random50_topology.json', 'node_spacing': 10},
+	           	 	'e':{'graph_file':'test_47_partial.json', 'node_spacing': 10},
 	}	
 	
 	for (graph in graph_files) {

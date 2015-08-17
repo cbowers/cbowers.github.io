@@ -94,7 +94,7 @@
             {
                 "classes": "edge-link-labeled",
                 "data": {
-                    "label": "(20,10)",
+                    "label": "(10,20)",
                     "source": "004",
                     "target": "005"
                 }
