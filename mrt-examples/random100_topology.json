@@ -1,0 +1,1841 @@
+{
+    "data": {
+        "SUID": 62,
+        "__Annotations": [],
+        "name": "frederick",
+        "selected": true,
+        "shared_name": "fred"
+    },
+    "elements": {
+        "edges": [
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "000",
+                    "target": "025"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "001",
+                    "target": "013"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "001",
+                    "target": "087"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "002",
+                    "target": "073"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "002",
+                    "target": "086"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "002",
+                    "target": "025"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "002",
+                    "target": "051"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "003",
+                    "target": "084"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "003",
+                    "target": "043"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "003",
+                    "target": "066"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "004",
+                    "target": "005"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "004",
+                    "target": "032"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "004",
+                    "target": "035"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "004",
+                    "target": "087"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "005",
+                    "target": "099"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "005",
+                    "target": "066"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "006",
+                    "target": "017"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "006",
+                    "target": "043"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "007",
+                    "target": "088"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "007",
+                    "target": "074"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "007",
+                    "target": "096"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "008",
+                    "target": "095"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "009",
+                    "target": "054"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "009",
+                    "target": "056"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "009",
+                    "target": "066"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "010",
+                    "target": "049"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "010",
+                    "target": "078"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "010",
+                    "target": "078"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "011",
+                    "target": "035"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "011",
+                    "target": "091"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "011",
+                    "target": "098"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "012",
+                    "target": "075"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "012",
+                    "target": "088"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "012",
+                    "target": "024"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "012",
+                    "target": "068"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "013",
+                    "target": "077"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "013",
+                    "target": "014"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "013",
+                    "target": "038"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "013",
+                    "target": "067"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "014",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "014",
+                    "target": "046"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "015",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "016",
+                    "target": "044"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "016",
+                    "target": "044"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "016",
+                    "target": "081"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "017",
+                    "target": "019"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "017",
+                    "target": "095"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "017",
+                    "target": "070"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "018",
+                    "target": "059"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "019",
+                    "target": "021"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "019",
+                    "target": "035"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "019",
+                    "target": "072"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "019",
+                    "target": "089"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "020",
+                    "target": "079"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "020",
+                    "target": "058"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "020",
+                    "target": "060"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "021",
+                    "target": "064"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "021",
+                    "target": "069"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "022",
+                    "target": "033"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "023",
+                    "target": "093"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "023",
+                    "target": "033"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "024",
+                    "target": "084"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "024",
+                    "target": "086"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "025",
+                    "target": "080"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "025",
+                    "target": "095"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "026",
+                    "target": "046"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "026",
+                    "target": "041"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "026",
+                    "target": "054"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "026",
+                    "target": "082"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "027",
+                    "target": "029"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "027",
+                    "target": "099"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "028",
+                    "target": "039"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "028",
+                    "target": "099"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "029",
+                    "target": "091"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "030",
+                    "target": "092"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "030",
+                    "target": "066"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "030",
+                    "target": "090"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "030",
+                    "target": "097"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "031",
+                    "target": "055"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "032",
+                    "target": "077"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "032",
+                    "target": "043"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "032",
+                    "target": "073"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "033",
+                    "target": "081"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "033",
+                    "target": "063"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "034",
+                    "target": "042"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "035",
+                    "target": "075"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "035",
+                    "target": "085"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "036",
+                    "target": "096"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "037",
+                    "target": "042"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "037",
+                    "target": "089"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "039",
+                    "target": "058"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "039",
+                    "target": "044"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "040",
+                    "target": "095"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "040",
+                    "target": "053"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "041",
+                    "target": "087"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "041",
+                    "target": "059"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "042",
+                    "target": "053"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "042",
+                    "target": "059"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "043",
+                    "target": "088"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "044",
+                    "target": "058"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "044",
+                    "target": "083"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "045",
+                    "target": "080"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "045",
+                    "target": "049"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "045",
+                    "target": "084"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "045",
+                    "target": "089"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "046",
+                    "target": "050"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "046",
+                    "target": "048"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "046",
+                    "target": "093"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "047",
+                    "target": "082"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "047",
+                    "target": "054"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "048",
+                    "target": "084"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "048",
+                    "target": "057"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "048",
+                    "target": "094"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "049",
+                    "target": "085"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "049",
+                    "target": "072"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "049",
+                    "target": "053"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "050",
+                    "target": "079"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "050",
+                    "target": "096"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "050",
+                    "target": "061"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "051",
+                    "target": "083"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "051",
+                    "target": "076"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "052",
+                    "target": "067"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "052",
+                    "target": "079"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "054",
+                    "target": "057"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,30)",
+                    "source": "054",
+                    "target": "064"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "054",
+                    "target": "072"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,30)",
+                    "source": "055",
+                    "target": "073"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "055",
+                    "target": "056"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "056",
+                    "target": "069"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "057",
+                    "target": "065"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "057",
+                    "target": "082"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "059",
+                    "target": "077"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(20,10)",
+                    "source": "061",
+                    "target": "062"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "061",
+                    "target": "093"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "062",
+                    "target": "092"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "062",
+                    "target": "086"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "062",
+                    "target": "065"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "063",
+                    "target": "070"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "064",
+                    "target": "091"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "065",
+                    "target": "074"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "065",
+                    "target": "092"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "068",
+                    "target": "078"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "10",
+                    "source": "069",
+                    "target": "076"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "071",
+                    "target": "078"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,20)",
+                    "source": "072",
+                    "target": "079"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(10,20)",
+                    "source": "074",
+                    "target": "098"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "075",
+                    "target": "089"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "078",
+                    "target": "084"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "30",
+                    "source": "080",
+                    "target": "082"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "20",
+                    "source": "084",
+                    "target": "088"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "086",
+                    "target": "092"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "087",
+                    "target": "091"
+                }
+            },
+            {
+                "classes": "edge-link-labeled",
+                "data": {
+                    "label": "(30,10)",
+                    "source": "090",
+                    "target": "094"
+                }
+            }
+        ],
+        "nodes": [
+            {
+                "data": {
+                    "id": "000",
+                    "name": "000"
+                }
+            },
+            {
+                "data": {
+                    "id": "001",
+                    "name": "001"
+                }
+            },
+            {
+                "data": {
+                    "id": "002",
+                    "name": "002"
+                }
+            },
+            {
+                "data": {
+                    "id": "003",
+                    "name": "003"
+                }
+            },
+            {
+                "data": {
+                    "id": "004",
+                    "name": "004"
+                }
+            },
+            {
+                "data": {
+                    "id": "005",
+                    "name": "005"
+                }
+            },
+            {
+                "data": {
+                    "id": "006",
+                    "name": "006"
+                }
+            },
+            {
+                "data": {
+                    "id": "007",
+                    "name": "007"
+                }
+            },
+            {
+                "data": {
+                    "id": "008",
+                    "name": "008"
+                }
+            },
+            {
+                "data": {
+                    "id": "009",
+                    "name": "009"
+                }
+            },
+            {
+                "data": {
+                    "id": "010",
+                    "name": "010"
+                }
+            },
+            {
+                "data": {
+                    "id": "011",
+                    "name": "011"
+                }
+            },
+            {
+                "data": {
+                    "id": "012",
+                    "name": "012"
+                }
+            },
+            {
+                "data": {
+                    "id": "013",
+                    "name": "013"
+                }
+            },
+            {
+                "data": {
+                    "id": "014",
+                    "name": "014"
+                }
+            },
+            {
+                "data": {
+                    "id": "015",
+                    "name": "015"
+                }
+            },
+            {
+                "data": {
+                    "id": "016",
+                    "name": "016"
+                }
+            },
+            {
+                "data": {
+                    "id": "017",
+                    "name": "017"
+                }
+            },
+            {
+                "data": {
+                    "id": "018",
+                    "name": "018"
+                }
+            },
+            {
+                "data": {
+                    "id": "019",
+                    "name": "019"
+                }
+            },
+            {
+                "data": {
+                    "id": "020",
+                    "name": "020"
+                }
+            },
+            {
+                "data": {
+                    "id": "021",
+                    "name": "021"
+                }
+            },
+            {
+                "data": {
+                    "id": "022",
+                    "name": "022"
+                }
+            },
+            {
+                "data": {
+                    "id": "023",
+                    "name": "023"
+                }
+            },
+            {
+                "data": {
+                    "id": "024",
+                    "name": "024"
+                }
+            },
+            {
+                "data": {
+                    "id": "025",
+                    "name": "025"
+                }
+            },
+            {
+                "data": {
+                    "id": "026",
+                    "name": "026"
+                }
+            },
+            {
+                "data": {
+                    "id": "027",
+                    "name": "027"
+                }
+            },
+            {
+                "data": {
+                    "id": "028",
+                    "name": "028"
+                }
+            },
+            {
+                "data": {
+                    "id": "029",
+                    "name": "029"
+                }
+            },
+            {
+                "data": {
+                    "id": "030",
+                    "name": "030"
+                }
+            },
+            {
+                "data": {
+                    "id": "031",
+                    "name": "031"
+                }
+            },
+            {
+                "data": {
+                    "id": "032",
+                    "name": "032"
+                }
+            },
+            {
+                "data": {
+                    "id": "033",
+                    "name": "033"
+                }
+            },
+            {
+                "data": {
+                    "id": "034",
+                    "name": "034"
+                }
+            },
+            {
+                "data": {
+                    "id": "035",
+                    "name": "035"
+                }
+            },
+            {
+                "data": {
+                    "id": "036",
+                    "name": "036"
+                }
+            },
+            {
+                "data": {
+                    "id": "037",
+                    "name": "037"
+                }
+            },
+            {
+                "data": {
+                    "id": "038",
+                    "name": "038"
+                }
+            },
+            {
+                "data": {
+                    "id": "039",
+                    "name": "039"
+                }
+            },
+            {
+                "data": {
+                    "id": "040",
+                    "name": "040"
+                }
+            },
+            {
+                "data": {
+                    "id": "041",
+                    "name": "041"
+                }
+            },
+            {
+                "data": {
+                    "id": "042",
+                    "name": "042"
+                }
+            },
+            {
+                "data": {
+                    "id": "043",
+                    "name": "043"
+                }
+            },
+            {
+                "data": {
+                    "id": "044",
+                    "name": "044"
+                }
+            },
+            {
+                "data": {
+                    "id": "045",
+                    "name": "045"
+                }
+            },
+            {
+                "data": {
+                    "id": "046",
+                    "name": "046"
+                }
+            },
+            {
+                "data": {
+                    "id": "047",
+                    "name": "047"
+                }
+            },
+            {
+                "data": {
+                    "id": "048",
+                    "name": "048"
+                }
+            },
+            {
+                "data": {
+                    "id": "049",
+                    "name": "049"
+                }
+            },
+            {
+                "data": {
+                    "id": "050",
+                    "name": "050"
+                }
+            },
+            {
+                "data": {
+                    "id": "051",
+                    "name": "051"
+                }
+            },
+            {
+                "data": {
+                    "id": "052",
+                    "name": "052"
+                }
+            },
+            {
+                "data": {
+                    "id": "053",
+                    "name": "053"
+                }
+            },
+            {
+                "data": {
+                    "id": "054",
+                    "name": "054"
+                }
+            },
+            {
+                "data": {
+                    "id": "055",
+                    "name": "055"
+                }
+            },
+            {
+                "data": {
+                    "id": "056",
+                    "name": "056"
+                }
+            },
+            {
+                "data": {
+                    "id": "057",
+                    "name": "057"
+                }
+            },
+            {
+                "data": {
+                    "id": "058",
+                    "name": "058"
+                }
+            },
+            {
+                "data": {
+                    "id": "059",
+                    "name": "059"
+                }
+            },
+            {
+                "data": {
+                    "id": "060",
+                    "name": "060"
+                }
+            },
+            {
+                "data": {
+                    "id": "061",
+                    "name": "061"
+                }
+            },
+            {
+                "data": {
+                    "id": "062",
+                    "name": "062"
+                }
+            },
+            {
+                "data": {
+                    "id": "063",
+                    "name": "063"
+                }
+            },
+            {
+                "data": {
+                    "id": "064",
+                    "name": "064"
+                }
+            },
+            {
+                "data": {
+                    "id": "065",
+                    "name": "065"
+                }
+            },
+            {
+                "data": {
+                    "id": "066",
+                    "name": "066"
+                }
+            },
+            {
+                "data": {
+                    "id": "067",
+                    "name": "067"
+                }
+            },
+            {
+                "data": {
+                    "id": "068",
+                    "name": "068"
+                }
+            },
+            {
+                "data": {
+                    "id": "069",
+                    "name": "069"
+                }
+            },
+            {
+                "data": {
+                    "id": "070",
+                    "name": "070"
+                }
+            },
+            {
+                "data": {
+                    "id": "071",
+                    "name": "071"
+                }
+            },
+            {
+                "data": {
+                    "id": "072",
+                    "name": "072"
+                }
+            },
+            {
+                "data": {
+                    "id": "073",
+                    "name": "073"
+                }
+            },
+            {
+                "data": {
+                    "id": "074",
+                    "name": "074"
+                }
+            },
+            {
+                "data": {
+                    "id": "075",
+                    "name": "075"
+                }
+            },
+            {
+                "data": {
+                    "id": "076",
+                    "name": "076"
+                }
+            },
+            {
+                "data": {
+                    "id": "077",
+                    "name": "077"
+                }
+            },
+            {
+                "data": {
+                    "id": "078",
+                    "name": "078"
+                }
+            },
+            {
+                "data": {
+                    "id": "079",
+                    "name": "079"
+                }
+            },
+            {
+                "data": {
+                    "id": "080",
+                    "name": "080"
+                }
+            },
+            {
+                "data": {
+                    "id": "081",
+                    "name": "081"
+                }
+            },
+            {
+                "data": {
+                    "id": "082",
+                    "name": "082"
+                }
+            },
+            {
+                "data": {
+                    "id": "083",
+                    "name": "083"
+                }
+            },
+            {
+                "data": {
+                    "id": "084",
+                    "name": "084"
+                }
+            },
+            {
+                "data": {
+                    "id": "085",
+                    "name": "085"
+                }
+            },
+            {
+                "data": {
+                    "id": "086",
+                    "name": "086"
+                }
+            },
+            {
+                "data": {
+                    "id": "087",
+                    "name": "087"
+                }
+            },
+            {
+                "data": {
+                    "id": "088",
+                    "name": "088"
+                }
+            },
+            {
+                "data": {
+                    "id": "089",
+                    "name": "089"
+                }
+            },
+            {
+                "data": {
+                    "id": "090",
+                    "name": "090"
+                }
+            },
+            {
+                "data": {
+                    "id": "091",
+                    "name": "091"
+                }
+            },
+            {
+                "data": {
+                    "id": "092",
+                    "name": "092"
+                }
+            },
+            {
+                "data": {
+                    "id": "093",
+                    "name": "093"
+                }
+            },
+            {
+                "data": {
+                    "id": "094",
+                    "name": "094"
+                }
+            },
+            {
+                "data": {
+                    "id": "095",
+                    "name": "095"
+                }
+            },
+            {
+                "data": {
+                    "id": "096",
+                    "name": "096"
+                }
+            },
+            {
+                "data": {
+                    "id": "097",
+                    "name": "097"
+                }
+            },
+            {
+                "data": {
+                    "id": "098",
+                    "name": "098"
+                }
+            },
+            {
+                "data": {
+                    "id": "099",
+                    "name": "099"
+                }
+            }
+        ]
+    },
+    "format_version": "1.0",
+    "target_cytoscapejs_version": "~2.1"
+}

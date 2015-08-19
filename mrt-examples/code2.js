@@ -108,16 +108,29 @@ $('#cy').cytoscape({
     	'border-width': 2,
     	'width': 45,
       })
-    .selector('.edge-pnar1')
-      .css({
-        'line-color': 'DarkViolet',
-        'target-arrow-shape': 'none',
-      })
-    .selector('.edge-pnar2')
+    .selector('.edge-to-prefix-adv')
       .css({
         'line-color': 'DarkViolet',
         'target-arrow-shape': 'none',
         'line-style': 'dashed',
+      	'content':'data(label)',
+      	'text-background-color':'white',
+      	'text-background-opacity':'1',
+      	'color':'black',
+      })
+    .selector('.edge-pnar1')
+      .css({
+        'line-color': 'DarkViolet',
+        'target-arrow-shape': 'triangle',
+        'target-arrow-color': 'DarkViolet',
+        'line-style': 'solid',
+      })
+    .selector('.edge-pnar2')
+      .css({
+        'line-color': 'DarkViolet',
+        'target-arrow-shape': 'circle',
+        'target-arrow-color': 'DarkViolet',
+        'line-style': 'solid',
       }) 
     .selector('.blue-hidden-edge')
       .css({
@@ -146,16 +159,27 @@ $('#cy').cytoscape({
       ,
 
   wheelSensitivity: 0.25,
-//  layout: {
-//    name: 'cola',
-//	nodeSpacing: function( node ){ return 10; },
-//  },
+  layout: {
+    name: 'cola',
+  },
   
   // on graph initial layout done (could be async depending on layout...)
   ready: function(){
 	
 	function node_spacing_func(node){
-		return node_spacing;
+		if (node.hasClass('node-named-proxy')) {
+			return 500;
+		} else {
+			return node_spacing;
+		}
+	}
+	
+	function edge_length_func(edge){
+		if (edge.hasClass('edge-to-prefix-adv')) {
+			return 500;
+		} else {
+			return 100;
+		}
 	}
 	  
 	function reload_graph(){
@@ -169,11 +193,6 @@ $('#cy').cytoscape({
 			$.getJSON(graph_file).success(function(network) {
 				cy.load(network.elements);
 			})		
-					
-			cy.layout({
-				name : 'cola',
-//				nodeSpacing: node_spacing_func,
-			});
 		});
 	};
 	
@@ -186,8 +205,10 @@ $('#cy').cytoscape({
 	           	    'a': {'graph_file':'example_topo_graph.json', 'node_spacing': 10},
 	           	    'b':{'graph_file':'topo-15a_graph.json', 'node_spacing': 100},
 	           	 	'c':{'graph_file':'topo-15b_graph.json', 'node_spacing': 100},
-	           	 	'd':{'graph_file':'random50_topology.json', 'node_spacing': 10},
-	           	 	'e':{'graph_file':'test_47_partial.json', 'node_spacing': 10},
+	           	 	'd':{'graph_file':'random22_topology.json', 'node_spacing': 10},
+	           	 	'e':{'graph_file':'random22_graph.json', 'node_spacing': 10 },
+	           	 	'f':{'graph_file':'test_47_partial.json', 'node_spacing': 10},
+	           	 	'g':{'graph_file':'random100_topology.json', 'node_spacing': 10},
 	}	
 	
 	for (graph in graph_files) {
@@ -230,7 +251,8 @@ $('#cy').cytoscape({
 		  cy.edges().forEach(function (edge){
 			if ( edge.hasClass(dest_class) 
 					|| edge.hasClass('edge-gadag')
-					|| edge.hasClass('edge-link-labeled')){
+					|| edge.hasClass('edge-link-labeled')
+					|| edge.hasClass('edge-to-prefix-adv')){
 				edge.removeClass('hidden-edge')
 			}
 		  });
@@ -268,7 +290,14 @@ $('#cy').cytoscape({
 		});
 	});
 	
-	$("#cola-layout-button").bind("click", function(){
+	$("#cola1-layout-button").bind("click", function(){
+		cy.layout({
+			name : 'cola',
+			edgeLength: edge_length_func,
+		});
+	});
+	
+	$("#cola2-layout-button").bind("click", function(){
 		cy.layout({
 			name : 'cola',
 			nodeSpacing: node_spacing_func,
