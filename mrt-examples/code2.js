@@ -207,8 +207,7 @@ $('#cy').cytoscape({
 	           	 	'c':{'graph_file':'topo-15b_graph.json', 'node_spacing': 100},
 	           	 	'd':{'graph_file':'random22_topology.json', 'node_spacing': 10},
 	           	 	'e':{'graph_file':'random22_graph.json', 'node_spacing': 10 },
-	           	 	'f':{'graph_file':'test_47_partial.json', 'node_spacing': 10},
-	           	 	'g':{'graph_file':'random100_topology.json', 'node_spacing': 10},
+	           	 	'f':{'graph_file':'random100_topology.json', 'node_spacing': 10},
 	}	
 	
 	for (graph in graph_files) {
