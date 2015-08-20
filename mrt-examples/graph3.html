@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="[An example of getting started with Cytoscape.js]" />
+  <link href="style.css" rel="stylesheet" />
+  <meta charset=utf-8 />
+  <title>MRT visualization</title>
+  <script src="jquery.js"></script>
+  <script src="url.min.js"></script>  
+  <script src="cytoscape.js"></script>
+  <script src="cola.v3.min.js"></script>
+  <script src="code3.js"></script>
+</head>
+  
+<body>
+  <div id="cy"></div>
+  <div id="commands">
+  	<select id="graph-select"></select>
+  	<br>
+  	<button id="load-graph-button">reload graph</button>
+  	<br>
+  	<button id="load2-graph-button">load allcy</button>
+  	<br>
+  	<button id="load3-graph-button">add subset to cy</button>
+  	<br>
+  	<button id="cose-layout-button">cose layout</button>
+  	<br>
+  	<button id="cola1-layout-button">cola1 layout</button>
+  	<br>
+  	<button id="cola2-layout-button">cola2 layout</button>
+  	<br>
+  	<button id="cola3-layout-button">cola3 layout</button>
+  	<br>
+  	<button id="cola4-layout-button">cola4 layout</button>
+  	<br>
+  	<button id="cola5-layout-button">cola5 layout</button>
+  	<br>
+  	<button id="cola6-layout-button">cola6 layout</button>
+  	<br>
+  	<button id="unhide-edges-button">unhide all edges</button>
+  	<br>
+  	<input type="checkbox" id="blue-switch" class="switch" />
+  	<label for="blue-switch">show blue MRT</label>
+  	<br>
+  	<input type="checkbox" id="red-switch" class="switch" />
+  	<label for="red-switch">show red MRT</label>
+  	<br>
+  	<input type="checkbox" id="green-switch" class="switch" />
+  	<label for="green-switch">show green SPF</label>
+  	<br>
+  	<input type="checkbox" id="gadag-switch" class="switch" />
+  	<label for="gadag-switch">show GADAG</label>
+  	<br>
+  	<input type="checkbox" id="link-switch" class="switch" />
+  	<label for="link-switch">show links</label>
+  	
+  	<p>Choose a file and click the "cola1 layout" button a few times to layout
+    the topology. You can also help between layouts by pulling nodes around by hand.
+    Try the different variants of cola, as well.</p>
+  	<p> For files ending in _graph, left-click on a node to select it as a destination and see the shortest path tree (green),
+  	as well as MRT red and blue trees for that destination. </p>
+  	<p>Right-click on a node to simulate failing that node and see the MRT alternates selected
+  	by adjacent nodes to reach the destination (shown with dashed arrows)</p>
+  	<p>Hide or show different tree and graph components using the checkboxes.</p>
+  	<p>Some topologies have nodes numbered 2000 and above.  These are named proxy nodes 
+  	representing multi-homed prefixes.</p>
+  </div>
+</body>
+</html>
