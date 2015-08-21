@@ -1,0 +1,693 @@
+{
+    "elements": {
+        "edges": [
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "000",
+                    "target": "002"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "000",
+                    "target": "004"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "001",
+                    "target": "014"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "002",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "003",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "004",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "005",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "006",
+                    "target": "021"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "007",
+                    "target": "017"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "008",
+                    "target": "017"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "010",
+                    "target": "015"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "011",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "012",
+                    "target": "009"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "013",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "014",
+                    "target": "007"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "015",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "016",
+                    "target": "022"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "017",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "018",
+                    "target": "015"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "019",
+                    "target": "003"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "020",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "021",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "022",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-mrt-blue edge-dest-009",
+                "data": {
+                    "source": "023",
+                    "target": "005"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "000",
+                    "target": "019"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "001",
+                    "target": "011"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "002",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "003",
+                    "target": "019"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "004",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "005",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "006",
+                    "target": "002"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "007",
+                    "target": "014"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "008",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "010",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "011",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "012",
+                    "target": "005"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "013",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "014",
+                    "target": "001"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "015",
+                    "target": "018"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "016",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "017",
+                    "target": "007"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "018",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "019",
+                    "target": "009"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "020",
+                    "target": "021"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "021",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "022",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-mrt-red edge-dest-009",
+                "data": {
+                    "source": "023",
+                    "target": "003"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "000",
+                    "target": "019"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "001",
+                    "target": "011"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "002",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "003",
+                    "target": "019"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "004",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "004",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "005",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "006",
+                    "target": "002"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "007",
+                    "target": "017"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "008",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "010",
+                    "target": "015"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "011",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "012",
+                    "target": "009"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "013",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "014",
+                    "target": "001"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "015",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "016",
+                    "target": "022"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "017",
+                    "target": "008"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "017",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "018",
+                    "target": "015"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "019",
+                    "target": "009"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "020",
+                    "target": "002"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "021",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "022",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-spf-green edge-dest-009",
+                "data": {
+                    "source": "023",
+                    "target": "005"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-019 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "000",
+                    "target": "002"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-019 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "000",
+                    "target": "004"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-011 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "001",
+                    "target": "014"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-000 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "002",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-019 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "003",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-012 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "004",
+                    "target": "000"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-000 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "004",
+                    "target": "012"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-012 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "005",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-002 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "006",
+                    "target": "021"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-017 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "007",
+                    "target": "014"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-000 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "008",
+                    "target": "017"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-015 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "010",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-012 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "011",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-009 edge-alt-fec-red edge-alt-prot-link_protection",
+                "data": {
+                    "source": "012",
+                    "target": "005"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-020 edge-alt-fec-no_alternate edge-alt-prot-no_protection",
+                "data": {
+                    "source": "013",
+                    "target": "013"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-001 edge-alt-fec-blue edge-alt-prot-node_protection",
+                "data": {
+                    "source": "014",
+                    "target": "007"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-012 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "015",
+                    "target": "018"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-022 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "016",
+                    "target": "020"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-008 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "017",
+                    "target": "007"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-020 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "017",
+                    "target": "007"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-015 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "018",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-009 edge-alt-fec-blue edge-alt-prot-link_protection",
+                "data": {
+                    "source": "019",
+                    "target": "003"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-002 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "020",
+                    "target": "021"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-020 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "021",
+                    "target": "023"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-012 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "022",
+                    "target": "016"
+                }
+            },
+            {
+                "classes": "edge-alt hidden-edge edge-alt-dest-009 edge-alt-failed-node-005 edge-alt-fec-red edge-alt-prot-node_protection",
+                "data": {
+                    "source": "023",
+                    "target": "003"
+                }
+            }
+        ],
+        "nodes": []
+    }
+}
