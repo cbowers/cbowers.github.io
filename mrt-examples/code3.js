@@ -1,8 +1,26 @@
 $(function(){ // on dom ready
+
 	
 var allcy = cytoscape({
-    headless: true,
+//    layout: 'random',
+	headless: true,
 });
+
+var handler = function(){
+		console.log("called handler");
+};
+
+var handler2 = function(){
+	console.log("from handler2: allcy has this many edges: " + allcy.edges().size());
+};
+
+var reset_switches = function(){
+	    document.getElementById("blue-switch").checked = true;
+	    document.getElementById("red-switch").checked = true;
+	    document.getElementById("green-switch").checked = true;
+	    document.getElementById("gadag-switch").checked = true;
+	    document.getElementById("link-switch").checked = true;
+}
 
 var cy = cytoscape({
   container: document.getElementById('cy'),
@@ -173,53 +191,69 @@ var cy = cytoscape({
 	  
 	function reload_graph(){
 		cy.batch(function(){
-		    document.getElementById("blue-switch").checked = true;
-		    document.getElementById("red-switch").checked = true;
-		    document.getElementById("green-switch").checked = true;
-		    document.getElementById("gadag-switch").checked = true;
-		    document.getElementById("link-switch").checked = true;
-		    
-			$.getJSON(graph_file).success(function(network) {
+			reset_switches();
+			$.getJSON(graph_file+'/graph_basic.json').success(function(network) {
 				cy.load(network.elements);
 			})
 		});
 	};
 	
 	function reload_graph2(){
-		cy.batch(function(){
-		    document.getElementById("blue-switch").checked = true;
-		    document.getElementById("red-switch").checked = true;
-		    document.getElementById("green-switch").checked = true;
-		    document.getElementById("gadag-switch").checked = true;
-		    document.getElementById("link-switch").checked = true;
+//		cy.batch(function(){
+			reset_switches();
 		    
-			$.getJSON(graph_file).success(function(network) {
+			$.getJSON(graph_file+'.json').success(function(network) {
 				allcy.load(network.elements);
 			})
-			allcy.ready(function (){
-				console.log('from callback: allcy has this many edges: ' + allcy.edges().size());
-			});
-		});
+			// We need to use a callback for the done event on allcy,
+			// because without this, actions taken immediately
+			// after allcy.load yield no nodes or edges.
+			allcy.one("done",
+				function (){
+					console.log('from done callback allcy.one: allcy has this many edges: ' + allcy.edges().size());
+				  	var link_edges = cy.edges().filterFn(function( ele ){
+				  		if ( ele.hasClass('edge-link-labeled') ){
+				  			return true;
+				  		} else {
+				  			return false;
+				  		}
+					});
+					cy.remove(cy.edges());
+					cy.add(link_edges);
+				}
+			);
+//		});
 			
 	};
 	
 	function reload_graph3(){
-		console.log('allcy has this many edges: ' + allcy.edges().size());
-		allcy.nodes().forEach(function (node){
-			console.log('node in allcy:' )
-			  });
-		
-	  	var link_edges = cy.edges().filterFn(function( ele ){
-	  		if ( ele.hasClass('edge-link-labeled') ){
-	  			return true;
-	  		} else {
-	  			return false;
-	  		}
+		reset_switches();
+		allcy.remove(allcy.nodes());
+		console.log('emptied cyall');
+		$.getJSON(graph_file+'_basic.json').success(function(network) {
+			cy.load(network.elements);
 		});
-		cy.remove(cy.edges());
-		cy.add(link_edges);
-		
-	};	
+		console.log('loaded cy');
+		$.getJSON(graph_file+'.json').success(function(network) {
+			allcy.load(network.elements);
+		});
+		console.log('loaded allcy');
+		$("#messages").html("<p>The full graph is loading.  Layout should work on the partial graph." +
+				"Wait until the full graph is completely loaded for full interactive functionality.");
+		allcy.one("done",
+			function (){
+				console.log('from done callback allcy.one: allcy has this many edges: ' + allcy.edges().size());
+				$("#messages").html("<p>The full graph has been loaded.");
+			}
+		);
+	};
+	
+	function reload_graph4(){
+		reset_switches();
+		allcy.remove(allcy.nodes());
+		console.log('emptied cyall');
+
+	};
 	
     window.cy = this;
     
@@ -228,14 +262,19 @@ var cy = cytoscape({
 	var current_failed;
 	
 	var graph_files = {
-	           	    'a': {'graph_file':'example_topo_graph.json', 'node_spacing': 10},
-	           	    'b':{'graph_file':'topo-15a_graph.json', 'node_spacing': 100},
-	           	 	'c':{'graph_file':'topo-15b_graph.json', 'node_spacing': 100},
-	           	 	'd':{'graph_file':'random22_topology.json', 'node_spacing': 10},
-	           	 	'e':{'graph_file':'random22_graph.json', 'node_spacing': 10 },
-	           	 	'f':{'graph_file':'random100_topology.json', 'node_spacing': 10},
-	           	 	'g':{'graph_file':'random50_graph.json', 'node_spacing': 10},
-	}	
+//	           	    'a': {'graph_file':'example_topo_graph', 'node_spacing': 10},
+//	           	    'b':{'graph_file':'topo-15a_graph', 'node_spacing': 100},
+//	           	 	'c':{'graph_file':'topo-15b_graph', 'node_spacing': 100},
+//	           	 	'd':{'graph_file':'random22_topology', 'node_spacing': 10},
+//	           	 	'e':{'graph_file':'random22_graph', 'node_spacing': 10 },
+//	           	 	'f':{'graph_file':'random100_topology', 'node_spacing': 10},
+//	           	 	'g':{'graph_file':'random50_graph', 'node_spacing': 10},
+//	           	 	'h':{'graph_file':'random23_graph', 'node_spacing': 10},
+//	           	 	'i':{'graph_file':'random23_graph_basic', 'node_spacing': 10},
+//	           	 	'j':{'graph_file':'random100_graph', 'node_spacing': 10},
+	           	 	'k':{'graph_file':'random24', 'node_spacing': 10},
+	           	 	'l':{'graph_file':'random101', 'node_spacing': 10},	
+	}
 	
 	for (graph in graph_files) {
 		$("#graph-select").append( '<option value="' + graph + '">' + graph_files[graph].graph_file);
@@ -248,7 +287,7 @@ var cy = cytoscape({
 		console.log('from inside change event handler, val=' + $("#graph-select").val())
 		graph_file = graph_files[$("#graph-select").val()].graph_file;
 		node_spacing = graph_files[$("#graph-select").val()].node_spacing;
-		reload_graph();
+//		reload_graph();
 	});
 
 	console.log('testing console');
@@ -265,44 +304,74 @@ var cy = cytoscape({
 		reload_graph();
 	}
 
-	cy.on('tap', 'node', function(e){
-	  var node = e.cyTarget;
-	  var old_dest = current_dest;
-	  current_dest = node.id();
-	  var old_dest_class = 'edge-dest-' + old_dest;
-	  var curr_dest_class = 'edge-dest-' + current_dest;
-	  
-//	  cy.batch(function(){
-//		  cy.nodes().removeClass('node-current-dest');
-//		  cy.elements('node#'+current_dest).addClass('node-current-dest');
-//		  cy.nodes().removeClass('node-current-failed');
-//		  cy.edges().addClass('hidden-edge');
-//		  cy.edges().forEach(function (edge){
-//			if ( edge.hasClass(dest_class) 
-//					|| edge.hasClass('edge-gadag')
-//					|| edge.hasClass('edge-link-labeled')
-//					|| edge.hasClass('edge-to-prefix-adv')){
-//				edge.removeClass('hidden-edge')
-//			}
-//		  });
-//	  });
+	cy.on('tap', function(event){
+		var old_dest = current_dest;
+		var old_dest_class = 'edge-dest-' + old_dest;
+		var old_edges = cy.edges().filterFn(function( ele ){
+			if ( ele.hasClass(old_dest_class) ){
+				return true;
+			} else {
+				return false;
+			}
+		});
 
-	  cy.batch(function(){
-		  cy.elements('node#'+old_dest).removeClass('node-current-dest');
-		  cy.elements('node#'+current_dest).addClass('node-current-dest');
-		  cy.edges().forEach(function (edge){
-			if ( edge.hasClass(old_dest_class) ){
-				edge.addClass('hidden-edge')
+		var evtTarget = event.cyTarget;
+		if( evtTarget === cy ){
+		    console.log('tap on background');
+		    old_edges.remove()
+		    current_dest = undefined
+		} else {
+			console.log('tap on some element');
+			if (evtTarget.isNode()){
+			  console.log('tap on node');
+			  current_dest = evtTarget.id();
+			  cy.batch(function(){
+				console.log('cy has this many edges: ' + cy.edges().size());
+				$.getJSON(graph_file + '/dest_' + current_dest  +'.json').success(function(network) {
+					console.log('file loaded successfully');
+				  	console.log('cy has this many edges: ' + cy.edges().size());
+				  	old_edges.remove()
+					cy.add(network.elements);
+				});
+				console.log('cy has this many edges: ' + cy.edges().size());
+				  
+			  });
 			}
-		  });
-		  cy.edges().forEach(function (edge){
-			if ( edge.hasClass(curr_dest_class) ){
-				edge.removeClass('hidden-edge')
-			}
-		  });
-	  });
-	  
+		}		
 	});
+	
+//	cy.on('tap', 'node', function(e){
+//	  var node = e.cyTarget;
+//	  var old_dest = current_dest;
+//	  current_dest = node.id();
+//	  var old_dest_class = 'edge-dest-' + old_dest;
+//	  var curr_dest_class = 'edge-dest-' + current_dest;
+//
+//	  cy.batch(function(){
+//
+//		console.log('cy has this many edges: ' + cy.edges().size());
+//		$.getJSON(graph_file + '/dest_' + current_dest  +'.json').success(function(network) {
+//			console.log('file loaded successfully');
+//			console.log('old_dest_class = ' + old_dest_class)
+//			
+//		  	var old_edges = cy.edges().filterFn(function( ele ){
+//		  		if ( ele.hasClass(old_dest_class) ){
+//		  			return true;
+//		  		} else {
+//		  			return false;
+//		  		}
+//			});
+//			
+//		  	console.log("old_edges has len = " + old_edges.size())
+//		  	old_edges.remove()
+//		  	console.log('cy has this many edges: ' + cy.edges().size());
+//			cy.add(network.elements);
+//		});
+//		console.log('cy has this many edges: ' + cy.edges().size());
+//		  
+//	  });
+//	  
+//	});
 	
 	cy.on('cxttap', 'node', function(e){
 		  var node = e.cyTarget;
@@ -351,6 +420,10 @@ var cy = cytoscape({
 	
 	$("#load3-graph-button").bind("click", function(){
 		reload_graph3();
+	});
+	
+	$("#load4-graph-button").bind("click", function(){
+		reload_graph4();
 	});
     
 	$("#cose-layout-button").bind("click", function(){
@@ -462,103 +535,203 @@ var cy = cytoscape({
 	
 	$("#blue-switch").bind("click", function(){
 		if (this.checked){
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-mrt-blue') ){
-						edge.removeClass('blue-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-mrt-blue')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
 		} else {
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-mrt-blue') ){
-						edge.addClass('blue-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-mrt-blue')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
 		}
 	});
 
 	$("#red-switch").bind("click", function(){
 		if (this.checked){
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-mrt-red') ){
-						edge.removeClass('red-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-mrt-red')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
 		} else {
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-mrt-red') ){
-						edge.addClass('red-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-mrt-red')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
 		}
-	});
+	});	
 	
 	$("#green-switch").bind("click", function(){
 		if (this.checked){
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-spf-green') ){
-						edge.removeClass('green-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-spf-green')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
 		} else {
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-spf-green') ){
-						edge.addClass('green-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-spf-green')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
 		}
-	});
+	});		
 	
 	$("#gadag-switch").bind("click", function(){
 		if (this.checked){
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-gadag') ){
-						edge.removeClass('gadag-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-gadag')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
 		} else {
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-gadag') ){
-						edge.addClass('gadag-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-gadag')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
 		}
 	});
 	
 	$("#link-switch").bind("click", function(){
 		if (this.checked){
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-link-labeled') ){
-						edge.removeClass('link-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-link-labeled')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
 		} else {
-			cy.batch(function(){
-				cy.edges().forEach(function (edge){
-					if ( edge.hasClass('edge-link-labeled') ){
-						edge.addClass('link-hidden-edge');
-					}
-				});
-			});
+			cy.style()
+				.selector('.edge-link-labeled')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
 		}
-	});
+	});	
+	
+//	$("#blue-switch").bind("click", function(){
+//		if (this.checked){
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-mrt-blue') ){
+//						edge.removeClass('blue-hidden-edge');
+//					}
+//				});
+//			});
+//		} else {
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-mrt-blue') ){
+//						edge.addClass('blue-hidden-edge');
+//					}
+//				});
+//			});
+//		}
+//	});
+//
+//	$("#red-switch").bind("click", function(){
+//		if (this.checked){
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-mrt-red') ){
+//						edge.removeClass('red-hidden-edge');
+//					}
+//				});
+//			});
+//		} else {
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-mrt-red') ){
+//						edge.addClass('red-hidden-edge');
+//					}
+//				});
+//			});
+//		}
+//	});
+	
+//	$("#green-switch").bind("click", function(){
+//		if (this.checked){
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-spf-green') ){
+//						edge.removeClass('green-hidden-edge');
+//					}
+//				});
+//			});
+//		} else {
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-spf-green') ){
+//						edge.addClass('green-hidden-edge');
+//					}
+//				});
+//			});
+//		}
+//	});
+	
+//	$("#gadag-switch").bind("click", function(){
+//		if (this.checked){
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-gadag') ){
+//						edge.removeClass('gadag-hidden-edge');
+//					}
+//				});
+//			});
+//		} else {
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-gadag') ){
+//						edge.addClass('gadag-hidden-edge');
+//					}
+//				});
+//			});
+//		}
+//	});
+//	
+//	$("#link-switch").bind("click", function(){
+//		if (this.checked){
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-link-labeled') ){
+//						edge.removeClass('link-hidden-edge');
+//					}
+//				});
+//			});
+//		} else {
+//			cy.batch(function(){
+//				cy.edges().forEach(function (edge){
+//					if ( edge.hasClass('edge-link-labeled') ){
+//						edge.addClass('link-hidden-edge');
+//					}
+//				});
+//			});
+//		}
+//	});
 	
   }
 });
