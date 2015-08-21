@@ -280,14 +280,14 @@ var cy = cytoscape({
 		$("#graph-select").append( '<option value="' + graph + '">' + graph_files[graph].graph_file);
 	}
 
-	var graph_file = graph_files['a'].graph_file;
-	var node_spacing = graph_files['a'].node_spacing;
+	var graph_file = graph_files['k'].graph_file;
+	var node_spacing = graph_files['k'].node_spacing;
 	
 	$("#graph-select").bind("change", function(){
 		console.log('from inside change event handler, val=' + $("#graph-select").val())
 		graph_file = graph_files[$("#graph-select").val()].graph_file;
 		node_spacing = graph_files[$("#graph-select").val()].node_spacing;
-//		reload_graph();
+		reload_graph();
 	});
 
 	console.log('testing console');
