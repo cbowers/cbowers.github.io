@@ -279,7 +279,7 @@ var cy = cytoscape({
 		console.log('emptied cyall');
 	};
 	
-	function fail_node(failed_node)
+	function fail_node(failed_node){
 	  cy.batch(function(){
 		  cy.nodes().removeClass('node-current-failed');
 		  cy.elements('node#'+failed_node).addClass('node-current-failed');
@@ -294,6 +294,7 @@ var cy = cytoscape({
 			}
 		  });
 	  });
+	}
 	
 	function toggle_prefix(click_node){
 		  var prefix_class = 'edge-prefix-'+click_node;
@@ -352,6 +353,7 @@ var cy = cytoscape({
 	
 	var graph_files = {
 					'a':{'graph_file':'example_topo', 'node_spacing': 10},
+					'b':{'graph_file':'topo-15b', 'node_spacing': 10},
 	           	 	'k':{'graph_file':'random24', 'node_spacing': 10},
 	           	 	'l':{'graph_file':'random101', 'node_spacing': 10},	
 	}
