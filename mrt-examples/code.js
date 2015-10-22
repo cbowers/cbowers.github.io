@@ -15,11 +15,12 @@ var handler2 = function(){
 };
 
 var reset_switches = function(){
-	    document.getElementById("blue-switch").checked = true;
-	    document.getElementById("red-switch").checked = true;
-	    document.getElementById("green-switch").checked = true;
-	    document.getElementById("gadag-switch").checked = true;
-	    document.getElementById("link-switch").checked = true;
+	document.getElementById("prefix-switch").checked = false;
+    document.getElementById("blue-switch").checked = true;
+    document.getElementById("red-switch").checked = true;
+    document.getElementById("green-switch").checked = true;
+    document.getElementById("gadag-switch").checked = true;
+    document.getElementById("link-switch").checked = true;
 }
 
 var cy = cytoscape({
@@ -38,6 +39,7 @@ var cy = cytoscape({
     	'border-color': 'DarkViolet',
     	'border-width': 2,
     	'width': 45,
+    	'display': 'none'
       })
     .selector('edge')
       .css({
@@ -64,6 +66,18 @@ var cy = cytoscape({
         'line-color': 'black',
         'target-arrow-shape': 'none',
       })
+    .selector('.edge-igp-excluded')
+      .css({
+        'line-color': 'crimson',
+        'width': 5,
+        'line-style': 'dashed',
+      })
+    .selector('.edge-mrt-ineligible')
+      .css({
+        'line-color': 'coral',
+        'width': 5,
+        'line-style': 'dashed',
+      }) 
     .selector('.edge-alt-fec-blue')
       .css({
         'line-color': 'blue',
@@ -118,6 +132,18 @@ var cy = cytoscape({
         'line-color': 'green',
         'target-arrow-color': 'green',
       })
+     .selector('.edge-spf-before-different')
+      .css({
+        'line-color': 'olive',
+        'target-arrow-color': 'olive',
+        'width': 5,
+      })
+     .selector('.edge-spf-before-microlooping')
+      .css({
+        'line-color': 'maroon',
+        'target-arrow-color': 'maroon',
+        'width': 5,
+      }) 
      .selector('.edge-gadag')
       .css({
         'line-color': 'orange',
@@ -150,16 +176,22 @@ var cy = cytoscape({
     .selector('.edge-pnar1')
       .css({
         'line-color': 'DarkViolet',
-        'source-arrow-shape': 'triangle',
-        'source-arrow-color': 'DarkViolet',
+        'target-arrow-shape': 'triangle',
+        'target-arrow-color': 'DarkViolet',
         'line-style': 'solid',
+      	'content':'1',
+      	'text-background-color':'white',
+      	'text-background-opacity':'1',
       })
     .selector('.edge-pnar2')
       .css({
         'line-color': 'DarkViolet',
-        'source-arrow-shape': 'circle',
-        'source-arrow-color': 'DarkViolet',
+        'target-arrow-shape': 'circle',
+        'target-arrow-color': 'DarkViolet',
         'line-style': 'solid',
+      	'content':'2',
+      	'text-background-color':'white',
+      	'text-background-opacity':'1',
       }) 
     .selector('.blue-hidden-edge')
       .css({
@@ -195,16 +227,19 @@ var cy = cytoscape({
   
   // on graph initial layout done (could be async depending on layout...)
   ready: function(){
+	
 	  
+	//addition to the pako.js library, the ".gz/b64" files can be decoded in unix using:
+	//base64 --decode graph_basic.json.gz.b64 | gunzip
 	function convert_zlib_b64_to_json_object(b64_data){
-		console.log('b64_data file loaded successfully');
-		console.log(b64_data);
+//		console.log('b64_data file loaded successfully');
+//		console.log(b64_data);
 		var zlib_data = atob(b64_data);
-		console.log('atob converted b64 data: ' + zlib_data);
+//		console.log('atob converted b64 data: ' + zlib_data);
 		var char_data    = zlib_data.split('').map(function(x){return x.charCodeAt(0);});
-		console.log('char_data: ' + char_data);
+//		console.log('char_data: ' + char_data);
 		var bin_data     = new Uint8Array(char_data);
-		console.log('bin_data: ' + bin_data);
+//		console.log('bin_data: ' + bin_data);
 		var data        = pako.inflate(bin_data);
 		var str_data     = String.fromCharCode.apply(null, new Uint16Array(data));
 		console.log("str_data:" + str_data);
@@ -254,6 +289,7 @@ var cy = cytoscape({
 					cy.add(network.elements);
 				});
 				current_dest = null;
+				current_failed_link = null;
 			})
 		});
 	};
@@ -324,7 +360,11 @@ var cy = cytoscape({
 	    cy.batch(function(){
 			var full_file;
 			if (current_gadag_root == null){
-				full_file = graph_file + '/dest_' + current_dest  +'.json'
+				if (current_failed_link == null){
+					full_file = graph_file + '/dest_' + current_dest  +'.json';
+				} else {
+					full_file = graph_file + '/lf_'+ current_failed_link + '/dest_' + current_dest  +'.json';
+				}
 			} else { 
 				full_file = graph_file + '/gr_'+ current_gadag_root + '/dest_' + current_dest  +'.json';
 			}
@@ -343,13 +383,14 @@ var cy = cytoscape({
 				type: "GET",
 				dataType: "text",
 				success: function(b64_data) {
+					console.log('successfully loaded:' + full_file)
 					var network = convert_zlib_b64_to_json_object(b64_data);
 					old_edges.remove()
 					cy.add(network.elements);
 				}
 			});
 		});
-		
+	
 	}
 	
 	
@@ -357,15 +398,20 @@ var cy = cytoscape({
     
    
 	var current_dest;
+	var current_failed_link = null;
 	var current_failed;
 	var current_gadag_root = null;
 	
 	var graph_files = {
-					'a':{'graph_file':'example_topo', 'node_spacing': 10},
-					'b':{'graph_file':'topo-15b', 'node_spacing': 10},
-	           	 	'k':{'graph_file':'random24', 'node_spacing': 10},
-	           	 	'l':{'graph_file':'random101', 'node_spacing': 10},
-	           	 	'm':{'graph_file':'topo-16a', 'node_spacing': 10},	
+					'a':{'graph_file':'basic_topo', 'node_spacing': 10},
+					'a2':{'graph_file':'complex_topo', 'node_spacing': 10},
+					'a3':{'graph_file':'random20', 'node_spacing': 10},
+					'a4':{'graph_file':'random20_complex', 'node_spacing': 10},
+					'a5':{'graph_file':'random50', 'node_spacing': 10},
+					'a6':{'graph_file':'random50_complex', 'node_spacing': 10},
+					'b1':{'graph_file':'microloop-example', 'node_spacing': 10},
+					'b2':{'graph_file':'random15_microloop', 'node_spacing': 10},
+					'b3':{'graph_file':'random25_microloop', 'node_spacing': 10},
 	}
 	
 	document.getElementById('lc_destination').checked = true;
@@ -381,6 +427,7 @@ var cy = cytoscape({
 		console.log('from inside change event handler, val=' + $("#graph-select").val())
 		graph_file = graph_files[$("#graph-select").val()].graph_file;
 		node_spacing = graph_files[$("#graph-select").val()].node_spacing;
+		current_gadag_root = null; 
 		reload_graph();
 	});
 
@@ -402,52 +449,51 @@ var cy = cytoscape({
 		load_positioned_graph();
 	}
 	
-
-	cy.on('tap', function(event){
-		if ( document.getElementById('lc_destination').checked ){
+	cy.on('tap', 'edge', function(e){
+		  var edge = e.cyTarget;	
+		  console.log('tap on edge');
+		  console.log(edge.id())
+		  if (edge.hasClass('edge-link-labeled')){
+			  console.log('this edge has class edge-link-labeled');
+			  old_failed_link = current_failed_link
+			  if (old_failed_link == edge.id()){
+				  cy.elements('edge#'+old_failed_link).removeClass('edge-igp-excluded');
+				  current_failed_link = null
+			  } else {
+				  current_failed_link = edge.id();
+				  cy.elements('edge#'+old_failed_link).removeClass('edge-igp-excluded');
+				  cy.elements('edge#'+current_failed_link).addClass('edge-igp-excluded');
+			  }
+			  update_dest_data(current_dest, current_dest);
+		  }
+	});	
+	
+	cy.on('tap', 'node', function(e){
+	  var node = e.cyTarget;
+	  console.log(node.id())
+	  if ( document.getElementById('lc_destination').checked ){
 			console.log("left_click is lc_destination")
 			cy.nodes().removeClass('node-current-failed');
 			cy.nodes().removeClass('node-current-dest');
 			
 			var old_dest = current_dest;
 			var old_dest_class = 'edge-dest-' + old_dest;
-
-			var evtTarget = event.cyTarget;
-			if( evtTarget === cy ){
-			    console.log('tap on background');
-				var old_edges = cy.edges().filterFn(function( ele ){
-					if ( ele.hasClass(old_dest_class) ){
-						return true;
-					} else {
-						return false;
-					}
-				});
-			    old_edges.remove()
-			    current_dest = null
-			    
-			} else {
-				console.log('tap on some element');
-				if (evtTarget.isNode()){
-				  console.log('tap on node');
-				  current_dest = evtTarget.id();
-				  update_dest_data(old_dest, current_dest)
-				}
+			console.log('tap on node');
+			current_dest = node.id();
+			update_dest_data(old_dest, current_dest)
+	  } else if (document.getElementById('lc_gadag_root').checked ){
+			if (node.hasClass('node-named-proxy')) {
+				$("#messages").html("<p>A named-proxy node representing a prefix node cannot be the GADAG root.");
+				return;
 			}
-		} else if (document.getElementById('lc_gadag_root').checked ){
-			var evtTarget = event.cyTarget;
-			if (evtTarget.isNode()){
-				if (evtTarget.hasClass('node-named-proxy')) {
-					$("#messages").html("<p>A named-proxy node representing a prefix node cannot be the GADAG root.");
-					return;
+			var gadag_root = node.id();
+			var old_edges = cy.edges().filterFn(function( ele ){
+				if ( ele.hasClass('element-basic') ){
+					return false;
+				} else {
+					return true;
 				}
-				var gadag_root = evtTarget.id();
-				var old_edges = cy.edges().filterFn(function( ele ){
-					if ( ele.hasClass('element-basic') ){
-						return false;
-					} else {
-						return true;
-					}
-				});
+			});
 			  
 			  console.log('trying to change the gadag root')
 			  
@@ -469,27 +515,44 @@ var cy = cytoscape({
 			}).fail( function() {
 				$("#messages").html("<p>There is no data available for GADAG root = " + gadag_root);
 			}); 
-			}
 		} else if (document.getElementById('lc_failed_node').checked ){
-			var evtTarget = event.cyTarget;
-			if (evtTarget.isNode()){
-			  current_failed = evtTarget.id();
+			  current_failed = node.id();
 			  fail_node(current_failed);
-			}
 		} else if (document.getElementById('lc_prefix_toggle').checked ){
-			var evtTarget = event.cyTarget;
-			if (evtTarget.isNode()){
-			  lclick_node = evtTarget.id();
+			  lclick_node = node.id();
 			  if ( cy.elements('node#'+lclick_node).hasClass('node-named-proxy') ){
 				  toggle_prefix(lclick_node);
 			  }
-			}
 		} 
+	});
+	
+	cy.on('tap', function(event){
+		var evtTarget = event.cyTarget;
+		if ( document.getElementById('lc_destination').checked ){
+			console.log("left_click is lc_destination")
+			if (evtTarget === cy){
+				cy.nodes().removeClass('node-current-failed');
+				cy.nodes().removeClass('node-current-dest');
+				var old_dest = current_dest;
+				var old_dest_class = 'edge-dest-' + old_dest;
+			    console.log('tap on background');
+				var old_edges = cy.edges().filterFn(function( ele ){
+					if ( ele.hasClass(old_dest_class) ){
+						return true;
+					} else {
+						return false;
+					}
+				});
+			    old_edges.remove();
+			    current_dest = null;
+			}
+		}
 	});
 	
 	cy.on('cxttap', 'node', function(e){
 		  var node = e.cyTarget;
 		  rclick_node = node.id();
+		  console.log(rclick_node);
 		  if ( cy.elements('node#'+rclick_node).hasClass('node-named-proxy') ){
 			  toggle_prefix(rclick_node);
 		  } else {
@@ -530,10 +593,16 @@ var cy = cytoscape({
 			  	  return ele.hasClass('node-named-proxy');
 			  	});
 			  	var named_proxy_edges = cy.edges().filterFn(function( ele ){
-				  	  return ele.hasClass('edge-to-prefix-adv');
+			  		if (ele.hasClass('edge-to-prefix-adv')) {
+			  			return true;
+			  		}
+			  		if (ele.hasClass('edge-pnar')) {
+			  			return true;
+			  		}
+				  	return false;
 				});
-			  	named_proxy_edges.remove()
-			  	named_proxy_nodes.remove()
+			  	named_proxy_edges.remove();
+			  	named_proxy_nodes.remove();
 				cy.layout({
 					name : 'cola',
 					maxSimulationTime: 8000,
@@ -542,8 +611,8 @@ var cy = cytoscape({
 							return 10;
 						},
 				});
-			  	named_proxy_nodes.restore()
-			  	named_proxy_edges.restore()
+			  	named_proxy_nodes.restore();
+			  	named_proxy_edges.restore();
 		  });
 	});	
 	
@@ -564,6 +633,26 @@ var cy = cytoscape({
 	
 	$("#unhide-edges-button").bind("click", function(){
 		cy.edges().removeClass('hidden-edge');
+	});
+	
+	$("#prefix-switch").bind("click", function(){
+		if (this.checked){
+			cy.style()
+				.selector('.node-named-proxy')
+					.style({
+						'display': 'element'
+					})
+				.update()
+			;
+		} else {
+			cy.style()
+				.selector('.node-named-proxy')
+					.style({
+						'display': 'none'
+					})
+				.update()
+			;
+		}
 	});
 	
 	$("#blue-switch").bind("click", function(){
